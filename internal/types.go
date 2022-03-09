@@ -32,9 +32,9 @@ func NewJsonRpcRequest(id interface{}, method string, params []interface{}) *Jso
 }
 
 func NewTxList() []string {
-	return []string{TestTxBundleFailedTooManyTimesRawTx, TestTxInvalidNonce1,
-		TestTxInvalidNonce2, TestTxCancelAtRelayInitialRawTx, TestTxCancelAtRelayInitialRawTx, TestTxMM2RawTx, TestInvalidObject}
+	// return []string{TestTxBundleFailedTooManyTimesRawTx, TestTxInvalidNonce1,
+	//	TestTxInvalidNonce2, TestTxCancelAtRelayInitialRawTx, TestTxCancelAtRelayInitialRawTx, TestTxMM2RawTx, TestInvalidObject}
 
-	//return []string{TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx,
-	//	TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1}
+	return []string{TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx, TestTxMM2RawTx,
+		TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1, TestTxInvalidNonce1}
 }
