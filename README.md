@@ -32,10 +32,10 @@ Flags:
 * Make sure to cd to project folder.
 * Run the below commands in the terminal shell.
 * Make sure to run Pre-run and Go path is set properly
-
+* Make sure to install go static check tool (go install honnef.co/go/tools/cmd/staticcheck@latest)
 # Pre-run
     make mod
-    make lint
+    make lint 
 
 # How to run unit test
     make test

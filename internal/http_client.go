@@ -54,5 +54,3 @@ func (h *httpClient) GenerateLoad(body interface{}) error {
 	}
 	return err
 }
-
-
