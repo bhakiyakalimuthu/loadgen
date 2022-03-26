@@ -1,14 +1,17 @@
 module loadgen
 
-go 1.17
+go 1.18
 
 require (
+	github.com/jmoiron/sqlx v1.3.4
+	github.com/lib/pq v1.10.4
 	github.com/mattn/go-colorable v0.1.12
 	github.com/spf13/cobra v1.3.0
 	go.uber.org/zap v1.21.0
 )
 
 require (
+	github.com/google/uuid v1.1.2 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
