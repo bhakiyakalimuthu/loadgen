@@ -8,6 +8,8 @@ package cmd
 
 import (
 	"context"
+	_ "embed"
+	"encoding/json"
 	"fmt"
 	"loadgen/internal"
 	"log"
@@ -27,6 +29,11 @@ import (
 const (
 	workerPoolSize = 5     // default worker pool size
 	env            = "dev" // development env
+)
+
+var (
+	//go:embed payload.json
+	payloadBytes []byte
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -176,11 +183,14 @@ func isValidURL(URL string) bool {
 
 func createRequest() []*internal.JsonRpcRequest {
 	var batch []*internal.JsonRpcRequest
-	txList := internal.NewTxList()
-	for _, tx := range txList {
-		rawTxReq := internal.NewJsonRpcRequest(1, "eth_sendRawTransaction", []interface{}{tx})
-		batch = append(batch, rawTxReq)
+	if err := json.Unmarshal(payloadBytes, &batch); err != nil {
+		panic(err)
 	}
+	//txList := internal.NewTxList()
+	//for _, tx := range txList {
+	//	rawTxReq := internal.NewJsonRpcRequest(1, "eth_sendRawTransaction", []interface{}{tx})
+	//	batch = append(batch, rawTxReq)
+	//}
 	return batch
 }
 
